@@ -1,35 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SciPlay - Jogos de Ciência</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        a {
+            text-decoration: none;
+        }
+
         /* Estilo para a seção de fundo da Página Inicial */
         #home {
             background: url('imagem/background.jpeg') no-repeat center center;
             background-size: cover;
-            height: 80vh; /* Altura da viewport */
+            height: 80vh;
+            /* Altura da viewport */
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             text-align: center;
         }
+
         .card-img-top {
-            height: 200px; /* Altura fixa para as imagens dos cards */
-            object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+            height: 200px;
+            /* Altura fixa para as imagens dos cards */
+            object-fit: cover;
+            /* Garante que a imagem preencha o espaço sem distorcer */
         }
     </style>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">SciPlay</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -47,7 +58,8 @@
                         <a class="nav-link" href="#contato">Contato</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-light position-relative" type="button" data-bs-toggle="modal" data-bs-target="#carrinhoModal">
+                <button class="btn btn-outline-light position-relative" type="button" data-bs-toggle="modal"
+                    data-bs-target="#carrinhoModal">
                     🛒 Carrinho (<span id="contadorCarrinho">0</span>)
                 </button>
             </div>
@@ -66,12 +78,43 @@
             <h2 class="text-center mb-5">Acesse aqui o nosso portal de jogos</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4" id="listaJogos">
                 <div class="col">
+                    <div class="card h-100 shadow-sm" data-id="3" data-nome="Física Espacial" data-preco="0.10">
+                        <img src="imagem/jogo4.jpeg" class="card-img-top" alt="Jogo de Física">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Desafio de energia</h5>
+                            <p class="card-title">Perguntas que estimulam o pensamento crítico sobre o impacto ambiental
+                                das diversas fontes de energia.</p>
+                            <a class="link-secondary mb-1" href="https://energia-brilhante-quiz.lovable.app"
+                                target="_blank" rel="noopener noreferrer">Acesse aqui</a>
+                            <p class="card-text text-success fw-bold mt-auto">R$ 0,10</p>
+                            <button class="btn btn-primary btn-add-carrinho"
+                                onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm" data-id="3" data-nome="Física Espacial" data-preco="0.10">
+                        <img src="imagem/jogo6.png" class="card-img-top" alt="Jogo de Física">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Parkour quiz</h5>
+                            <p class="card-title">Jogo online feito para computadores, ele envolve um npc que deve atravessar todo o labirinto e em seu caminho obstaculo aparecerão, para atravessa-los o jogador deve responder ás perguntas sobre o conteúdo corretamente: grupo do jess e da serra</p>
+                            <a class="link-secondary mb-1" href="https://parkour-quiz.netlify.app/"
+                                target="_blank" rel="noopener noreferrer">Acesse aqui</a>
+                            <p class="card-text text-success fw-bold mt-auto">R$ 0,10</p>
+                            <button class="btn btn-primary btn-add-carrinho"
+                                onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
                     <div class="card h-100 shadow-sm" data-id="1" data-nome="Química Maluca" data-preco="0.10">
                         <img src="imagem/jogo1.jpg" class="card-img-top" alt="Jogo de Química Maluca">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Química Maluca</h5>
+                            <p class="card-title">descrição</p>
                             <p class="card-text text-success fw-bold mt-auto">R$ 0,10</p>
-                            <button class="btn btn-primary btn-add-carrinho" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                            <button class="btn btn-primary btn-add-carrinho"
+                                onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
                         </div>
                     </div>
                 </div>
@@ -81,7 +124,8 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Aventura da Biologia</h5>
                             <p class="card-text text-success fw-bold mt-auto">R$ 0,10</p>
-                            <button class="btn btn-primary btn-add-carrinho" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                            <button class="btn btn-primary btn-add-carrinho"
+                                onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
                         </div>
                     </div>
                 </div>
@@ -91,19 +135,22 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Física Espacial</h5>
                             <p class="card-text text-success fw-bold mt-auto">R$ 0,10</p>
-                            <button class="btn btn-primary btn-add-carrinho" onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
+                            <button class="btn btn-primary btn-add-carrinho"
+                                onclick="adicionarAoCarrinho(this)">Adicionar ao Carrinho</button>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </div>
     </section>
 
     <section id="sobre" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">💡 Sobre a SciPlay</h2>
-            <p class="lead text-center">Nossa missão é tornar a ciência acessível e divertida através de jogos educativos de alta qualidade, desenvolvidos para todas as idades.</p>
-            <p class="text-center">Acreditamos que o aprendizado ativo e lúdico é a chave para despertar a curiosidade e o interesse pelo conhecimento científico.</p>
+            <p class="lead text-center">Nossa missão é tornar a ciência acessível e divertida através de jogos
+                educativos de alta qualidade, desenvolvidos para todas as idades.</p>
+            <p class="text-center">Acreditamos que o aprendizado ativo e lúdico é a chave para despertar a curiosidade e
+                o interesse pelo conhecimento científico.</p>
         </div>
     </section>
 
@@ -120,11 +167,13 @@
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho de Compras</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <ul class="list-group mb-3" id="listaCarrinho">
-                        <li class="list-group-item d-flex justify-content-between align-items-center" id="carrinhoVazioMsg">
+                        <li class="list-group-item d-flex justify-content-between align-items-center"
+                            id="carrinhoVazioMsg">
                             O carrinho está vazio.
                         </li>
                     </ul>
@@ -132,7 +181,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuar Comprando</button>
-                    <button type="button" class="btn btn-success" id="btnFinalizarCompra" disabled>Finalizar Compra</button>
+                    <button type="button" class="btn btn-success" id="btnFinalizarCompra" disabled>Finalizar
+                        Compra</button>
                 </div>
             </div>
         </div>
@@ -143,16 +193,18 @@
             <div class="modal-content">
                 <div class="modal-header bg-success text-white">
                     <h5 class="modal-title" id="checkoutModalLabel">🎉 Compra Finalizada!</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
                     <p class="lead">Para finalizar o pagamento, use o QR Code abaixo:</p>
                     <img src="imagem/Qrcode.jpg" class="img-fluid mb-3" alt="QR Code para Pagamento">
                     <h4 class="mt-4">Total a Pagar: <span class="text-success" id="totalCheckout">R$ 0,00</span></h4>
-                    <small class="text-muted">Aguardando confirmação do pagamento...</small>
+                    <small class="text-muted">PIX: niel.ma30@gmail.com</small>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="limparCarrinho()">Fechar e Limpar Carrinho</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="limparCarrinho()">Fechar e Limpar Carrinho</button>
                 </div>
             </div>
         </div>
@@ -180,14 +232,14 @@
             const totalCarrinhoElement = document.getElementById('totalCarrinho');
             const carrinhoVazioMsg = document.getElementById('carrinhoVazioMsg');
             const btnFinalizar = document.getElementById('btnFinalizarCompra');
-            
+
             // Calcula o total e a quantidade
             let total = 0;
             let quantidadeTotal = 0;
 
             // Limpa a lista atual do modal
             listaCarrinho.innerHTML = '';
-            
+
             // Se o carrinho estiver vazio
             if (carrinho.length === 0) {
                 listaCarrinho.innerHTML = '<li class="list-group-item d-flex justify-content-between align-items-center" id="carrinhoVazioMsg">O carrinho está vazio.</li>';
@@ -227,7 +279,7 @@
             const preco = parseFloat(card.dataset.preco);
 
             let carrinho = carregarCarrinho();
-            
+
             // Verifica se o item já existe no carrinho
             const itemExistente = carrinho.find(item => item.id === id);
 
@@ -262,10 +314,10 @@
             const carrinho = carregarCarrinho();
             if (carrinho.length > 0) {
                 const total = atualizarInterfaceCarrinho(carrinho);
-                
+
                 // Formata o total para exibição
                 document.getElementById('totalCheckout').textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
-                
+
                 // Oculta o modal do carrinho e mostra o de checkout
                 const carrinhoModal = bootstrap.Modal.getInstance(document.getElementById('carrinhoModal'));
                 carrinhoModal.hide();
@@ -274,7 +326,7 @@
                 checkoutModal.show();
             }
         });
-        
+
         // Função para limpar o carrinho (chamada após fechar o modal de checkout)
         function limparCarrinho() {
             localStorage.removeItem('carrinhoSciPlay');
@@ -289,5 +341,5 @@
 
     </script>
 </body>
-</html>
 
+</html>
